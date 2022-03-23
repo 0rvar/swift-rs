@@ -36,4 +36,11 @@ fn main() {
 
     let opt = unsafe { return_nullable(false) };
     println!("function returned data: {}", opt.is_some());
+
+    loop {
+        unsafe {
+            get_mounts();
+        }
+        std::thread::sleep(std::time::Duration::from_millis(1));
+    }
 }
